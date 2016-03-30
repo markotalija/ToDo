@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		55F89A421CAC061300E22A60 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F89A411CAC061300E22A60 /* LoginViewController.m */; };
+		55F89A451CAC08C900E22A60 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F89A441CAC08C900E22A60 /* SignUpViewController.m */; };
 		55FBDDC51CA9672C00968230 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 55FBDDC41CA9672C00968230 /* main.m */; };
 		55FBDDC81CA9672C00968230 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 55FBDDC71CA9672C00968230 /* AppDelegate.m */; };
 		55FBDDCB1CA9672C00968230 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55FBDDCA1CA9672C00968230 /* ViewController.m */; };
@@ -21,6 +22,8 @@
 /* Begin PBXFileReference section */
 		55F89A401CAC061300E22A60 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		55F89A411CAC061300E22A60 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		55F89A431CAC08C900E22A60 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
+		55F89A441CAC08C900E22A60 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		55FBDDC01CA9672C00968230 /* ToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55FBDDC41CA9672C00968230 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		55FBDDC61CA9672C00968230 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -119,6 +122,8 @@
 				55FBDDCA1CA9672C00968230 /* ViewController.m */,
 				55F89A401CAC061300E22A60 /* LoginViewController.h */,
 				55F89A411CAC061300E22A60 /* LoginViewController.m */,
+				55F89A431CAC08C900E22A60 /* SignUpViewController.h */,
+				55F89A441CAC08C900E22A60 /* SignUpViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -203,6 +208,7 @@
 			files = (
 				55FBDDCB1CA9672C00968230 /* ViewController.m in Sources */,
 				55FBDDC81CA9672C00968230 /* AppDelegate.m in Sources */,
+				55F89A451CAC08C900E22A60 /* SignUpViewController.m in Sources */,
 				55FBDDC51CA9672C00968230 /* main.m in Sources */,
 				55FBDDD11CA9672C00968230 /* ToDo.xcdatamodeld in Sources */,
 				55F89A421CAC061300E22A60 /* LoginViewController.m in Sources */,
