@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		551016891CB7EDAE001ECE4C /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 551016881CB7EDAE001ECE4C /* HomeViewController.m */; };
 		55F89A421CAC061300E22A60 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F89A411CAC061300E22A60 /* LoginViewController.m */; };
 		55F89A451CAC08C900E22A60 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F89A441CAC08C900E22A60 /* SignUpViewController.m */; };
 		55FBDDC51CA9672C00968230 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 55FBDDC41CA9672C00968230 /* main.m */; };
@@ -20,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		551016871CB7EDAE001ECE4C /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		551016881CB7EDAE001ECE4C /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		55F89A401CAC061300E22A60 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		55F89A411CAC061300E22A60 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		55F89A431CAC08C900E22A60 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
@@ -121,6 +124,8 @@
 				55FBDDC91CA9672C00968230 /* ViewController.h */,
 				55FBDDCA1CA9672C00968230 /* ViewController.m */,
 				55F89A401CAC061300E22A60 /* LoginViewController.h */,
+				551016871CB7EDAE001ECE4C /* HomeViewController.h */,
+				551016881CB7EDAE001ECE4C /* HomeViewController.m */,
 				55F89A411CAC061300E22A60 /* LoginViewController.m */,
 				55F89A431CAC08C900E22A60 /* SignUpViewController.h */,
 				55F89A441CAC08C900E22A60 /* SignUpViewController.m */,
@@ -211,6 +216,7 @@
 				55F89A451CAC08C900E22A60 /* SignUpViewController.m in Sources */,
 				55FBDDC51CA9672C00968230 /* main.m in Sources */,
 				55FBDDD11CA9672C00968230 /* ToDo.xcdatamodeld in Sources */,
+				551016891CB7EDAE001ECE4C /* HomeViewController.m in Sources */,
 				55F89A421CAC061300E22A60 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

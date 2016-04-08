@@ -17,6 +17,10 @@
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 @property (weak, nonatomic) IBOutlet UIView *containerView;
 @property (weak, nonatomic) IBOutlet UIView *logoView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicatorView;
+@property (weak, nonatomic) IBOutlet UIView *maskLogoView;
+@property (weak, nonatomic) IBOutlet UIButton *submitButton;
+@property (weak, nonatomic) IBOutlet UIView *footerView;
 @end
 
 @implementation LoginViewController
@@ -43,13 +47,55 @@
 #pragma mark - Actions
 
 - (IBAction)forgotPasswordButtonTapped:(UIButton *)sender {
+    NSLog(@"Forgot password button tapped");
 }
 
 - (IBAction)signInButtonTapped:(UIButton *)sender {
+    [self.activityIndicatorView startAnimating];
 }
 
 - (IBAction)signUpButtonTapped:(UIButton *)sender {
-    NSLog(@"Sign up...");
+    NSLog(@"Sign up button tapped");
+}
+
+#pragma mark - Public API
+
+- (void)prepareForAnimations {
+    
+    // Sign In Button
+    CGRect submitButtonFrame = self.submitButton.frame;
+    submitButtonFrame.origin.x = self.view.frame.size.width;
+    self.submitButton.frame = submitButtonFrame;
+    
+    // Footer View
+    CGRect footerViewFrame = self.footerView.frame;
+    footerViewFrame.origin.y = self.view.frame.size.height;
+    self.footerView.frame = footerViewFrame;
+}
+
+- (void)animate {
+    [UIView animateWithDuration:1.2 animations:^{
+        //self.maskLogoView.alpha = 0.0;
+        [self.maskLogoView setAlpha:0.0];
+    }];
+    
+             [UIView animateWithDuration:0.4
+                                   delay:0.2
+                                 options:UIViewAnimationOptionCurveEaseInOut
+                              animations:^{
+                                  CGRect submitButtonFrame = self.submitButton.frame;
+                                  submitButtonFrame.origin.x = 0.0;
+                                  self.submitButton.frame = submitButtonFrame;
+                              } completion:nil];
+    
+    [UIView animateWithDuration:0.7
+                          delay:0.2
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         CGRect frame = self.footerView.frame;
+                         frame.origin.y = 625.0;
+                         self.footerView.frame = frame;
+                     } completion:nil];
 }
 
 #pragma mark - View lifecycle
@@ -59,14 +105,21 @@
     
     [self configureTextField:self.usernameTextField];
     [self configureTextField:self.passwordTextField];
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self prepareForAnimations];
+    [self.activityIndicatorView stopAnimating];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    [UIView animateWithDuration:3.0 animations:^{
-        self.logoView.alpha = 0.0;
-    }];
+    [self animate];
+    
 }
 
 #pragma mark - UITextFieldDelegate
