@@ -17,6 +17,7 @@
 		5528281B1CBE74E2005CBB28 /* NotificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5528281A1CBE74E2005CBB28 /* NotificationController.m */; };
 		5528281D1CBE74E2005CBB28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5528281C1CBE74E2005CBB28 /* Assets.xcassets */; };
 		552828211CBE74E2005CBB28 /* ToDoWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 552828001CBE74E2005CBB28 /* ToDoWatch.app */; };
+		55644CE91CC1179F0003FEBA /* TaskTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55644CE81CC1179F0003FEBA /* TaskTableViewCell.m */; };
 		55F89A421CAC061300E22A60 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F89A411CAC061300E22A60 /* LoginViewController.m */; };
 		55F89A451CAC08C900E22A60 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F89A441CAC08C900E22A60 /* SignUpViewController.m */; };
 		55FBDDC51CA9672C00968230 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 55FBDDC41CA9672C00968230 /* main.m */; };
@@ -89,6 +90,9 @@
 		5528281A1CBE74E2005CBB28 /* NotificationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationController.m; sourceTree = "<group>"; };
 		5528281C1CBE74E2005CBB28 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5528281E1CBE74E2005CBB28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55644CE71CC1179F0003FEBA /* TaskTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskTableViewCell.h; sourceTree = "<group>"; };
+		55644CE81CC1179F0003FEBA /* TaskTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskTableViewCell.m; sourceTree = "<group>"; };
+		55644CEA1CC1183E0003FEBA /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		55F89A401CAC061300E22A60 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		55F89A411CAC061300E22A60 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		55F89A431CAC08C900E22A60 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
@@ -233,6 +237,7 @@
 		55FBDDE01CA96C3F00968230 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				55644CEA1CC1183E0003FEBA /* Constants.h */,
 				55FBDDC91CA9672C00968230 /* ViewController.h */,
 				55FBDDCA1CA9672C00968230 /* ViewController.m */,
 				55F89A401CAC061300E22A60 /* LoginViewController.h */,
@@ -241,6 +246,8 @@
 				55F89A411CAC061300E22A60 /* LoginViewController.m */,
 				55F89A431CAC08C900E22A60 /* SignUpViewController.h */,
 				55F89A441CAC08C900E22A60 /* SignUpViewController.m */,
+				55644CE71CC1179F0003FEBA /* TaskTableViewCell.h */,
+				55644CE81CC1179F0003FEBA /* TaskTableViewCell.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -399,6 +406,7 @@
 				55FBDDC81CA9672C00968230 /* AppDelegate.m in Sources */,
 				55F89A451CAC08C900E22A60 /* SignUpViewController.m in Sources */,
 				55FBDDC51CA9672C00968230 /* main.m in Sources */,
+				55644CE91CC1179F0003FEBA /* TaskTableViewCell.m in Sources */,
 				55FBDDD11CA9672C00968230 /* ToDo.xcdatamodeld in Sources */,
 				551016891CB7EDAE001ECE4C /* HomeViewController.m in Sources */,
 				55F89A421CAC061300E22A60 /* LoginViewController.m in Sources */,
@@ -626,6 +634,7 @@
 				552828241CBE74E2005CBB28 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		552828261CBE74E2005CBB28 /* Build configuration list for PBXNativeTarget "ToDoWatch" */ = {
 			isa = XCConfigurationList;
@@ -634,6 +643,7 @@
 				552828281CBE74E2005CBB28 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		55FBDDBB1CA9672C00968230 /* Build configuration list for PBXProject "ToDo" */ = {
 			isa = XCConfigurationList;
