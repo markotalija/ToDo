@@ -24,6 +24,10 @@ typedef NS_ENUM(NSInteger, TaskGroup) {
     IN_PROGRESS_TASK_GROUP
 };
 
+// User Defaults
+static NSString *const USER_IMAGE              = @"USER_IMAGE";
+static NSString *const WALKTHROUGH_PRESENTED   = @"WALKTHROUGH_PRESENTED";
+
 
 
 #endif /* Constants_h */

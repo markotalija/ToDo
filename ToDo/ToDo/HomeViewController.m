@@ -76,7 +76,7 @@
         
     }]];
     
-    if (![UIImagePickerController isCameraDeviceAvailable:UIImagePickerControllerCameraDeviceRear] || [UIImagePickerController isCameraDeviceAvailable:UIImagePickerControllerCameraDeviceFront]) {
+    if ([UIImagePickerController isCameraDeviceAvailable:UIImagePickerControllerCameraDeviceRear] || [UIImagePickerController isCameraDeviceAvailable:UIImagePickerControllerCameraDeviceFront]) {
         [alert addAction:[UIAlertAction actionWithTitle:@"Camera" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             
             UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
@@ -109,21 +109,23 @@
     self.userProfileImageView.layer.cornerRadius = self.userProfileImageView.frame.size.width / 2;
     [self.userProfileImageView addGestureRecognizer:tap];
     
+    //If NSUserDefaults exists, set NSData back to UIImage
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:USER_IMAGE]) {
+        NSData *data = [[NSUserDefaults standardUserDefaults] objectForKey:USER_IMAGE];
+        
+        //Setting image from *data
+        self.userProfileImageView.image = [[UIImage alloc] initWithData:data];
+    }
     
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:WALKTHROUGH_PRESENTED]) {
+        [self performSegueWithIdentifier:@"WalkthroughSegue" sender:self];
+        
+    }
     
 }
 
@@ -138,6 +140,12 @@
     }
     
     self.userProfileImageView.image = image;
+    
+    //Converting image to NSData
+    NSData *data = UIImageJPEGRepresentation(image, 1.0);
+    
+    [[NSUserDefaults standardUserDefaults] setObject:data forKey:USER_IMAGE];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     
     [picker dismissViewControllerAnimated:YES completion:nil];
 }

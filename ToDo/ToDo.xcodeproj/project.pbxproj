@@ -18,6 +18,9 @@
 		5528281D1CBE74E2005CBB28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5528281C1CBE74E2005CBB28 /* Assets.xcassets */; };
 		552828211CBE74E2005CBB28 /* ToDoWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 552828001CBE74E2005CBB28 /* ToDoWatch.app */; };
 		55644CE91CC1179F0003FEBA /* TaskTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55644CE81CC1179F0003FEBA /* TaskTableViewCell.m */; };
+		55B702631CCA5E0B00DF34B1 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55B702621CCA5E0B00DF34B1 /* CoreData.framework */; };
+		55B702651CCA5E7000DF34B1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55B702641CCA5E7000DF34B1 /* QuartzCore.framework */; };
+		55E330101CCA524300F44B7D /* WalkthroughViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55E3300F1CCA524300F44B7D /* WalkthroughViewController.m */; };
 		55F89A421CAC061300E22A60 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F89A411CAC061300E22A60 /* LoginViewController.m */; };
 		55F89A451CAC08C900E22A60 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F89A441CAC08C900E22A60 /* SignUpViewController.m */; };
 		55FBDDC51CA9672C00968230 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 55FBDDC41CA9672C00968230 /* main.m */; };
@@ -93,6 +96,10 @@
 		55644CE71CC1179F0003FEBA /* TaskTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskTableViewCell.h; sourceTree = "<group>"; };
 		55644CE81CC1179F0003FEBA /* TaskTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskTableViewCell.m; sourceTree = "<group>"; };
 		55644CEA1CC1183E0003FEBA /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		55B702621CCA5E0B00DF34B1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		55B702641CCA5E7000DF34B1 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		55E3300E1CCA524300F44B7D /* WalkthroughViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WalkthroughViewController.h; sourceTree = "<group>"; };
+		55E3300F1CCA524300F44B7D /* WalkthroughViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WalkthroughViewController.m; sourceTree = "<group>"; };
 		55F89A401CAC061300E22A60 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		55F89A411CAC061300E22A60 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		55F89A431CAC08C900E22A60 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
@@ -123,6 +130,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55B702651CCA5E7000DF34B1 /* QuartzCore.framework in Frameworks */,
+				55B702631CCA5E0B00DF34B1 /* CoreData.framework in Frameworks */,
 				55FBDDE31CA974D100968230 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -248,6 +257,8 @@
 				55F89A441CAC08C900E22A60 /* SignUpViewController.m */,
 				55644CE71CC1179F0003FEBA /* TaskTableViewCell.h */,
 				55644CE81CC1179F0003FEBA /* TaskTableViewCell.m */,
+				55E3300E1CCA524300F44B7D /* WalkthroughViewController.h */,
+				55E3300F1CCA524300F44B7D /* WalkthroughViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -255,6 +266,8 @@
 		55FBDDE11CA96C5F00968230 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				55B702641CCA5E7000DF34B1 /* QuartzCore.framework */,
+				55B702621CCA5E0B00DF34B1 /* CoreData.framework */,
 				55FBDDE21CA974D100968230 /* CoreLocation.framework */,
 			);
 			name = Frameworks;
@@ -405,6 +418,7 @@
 				55FBDDCB1CA9672C00968230 /* ViewController.m in Sources */,
 				55FBDDC81CA9672C00968230 /* AppDelegate.m in Sources */,
 				55F89A451CAC08C900E22A60 /* SignUpViewController.m in Sources */,
+				55E330101CCA524300F44B7D /* WalkthroughViewController.m in Sources */,
 				55FBDDC51CA9672C00968230 /* main.m in Sources */,
 				55644CE91CC1179F0003FEBA /* TaskTableViewCell.m in Sources */,
 				55FBDDD11CA9672C00968230 /* ToDo.xcdatamodeld in Sources */,
@@ -605,6 +619,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				INFOPLIST_FILE = ToDo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = rs.cubes.ToDo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -618,6 +633,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				INFOPLIST_FILE = ToDo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = rs.cubes.ToDo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
