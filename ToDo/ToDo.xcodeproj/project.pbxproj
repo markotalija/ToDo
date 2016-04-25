@@ -18,6 +18,8 @@
 		5528281D1CBE74E2005CBB28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5528281C1CBE74E2005CBB28 /* Assets.xcassets */; };
 		552828211CBE74E2005CBB28 /* ToDoWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 552828001CBE74E2005CBB28 /* ToDoWatch.app */; };
 		55644CE91CC1179F0003FEBA /* TaskTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55644CE81CC1179F0003FEBA /* TaskTableViewCell.m */; };
+		55773BCB1CCE3D210022F7A8 /* WalkthroughCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55773BCA1CCE3D210022F7A8 /* WalkthroughCollectionViewCell.m */; };
+		55773BCE1CCE438A0022F7A8 /* WalkthroughItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 55773BCD1CCE438A0022F7A8 /* WalkthroughItem.m */; };
 		55B702631CCA5E0B00DF34B1 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55B702621CCA5E0B00DF34B1 /* CoreData.framework */; };
 		55B702651CCA5E7000DF34B1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55B702641CCA5E7000DF34B1 /* QuartzCore.framework */; };
 		55E330101CCA524300F44B7D /* WalkthroughViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55E3300F1CCA524300F44B7D /* WalkthroughViewController.m */; };
@@ -96,6 +98,10 @@
 		55644CE71CC1179F0003FEBA /* TaskTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskTableViewCell.h; sourceTree = "<group>"; };
 		55644CE81CC1179F0003FEBA /* TaskTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskTableViewCell.m; sourceTree = "<group>"; };
 		55644CEA1CC1183E0003FEBA /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		55773BC91CCE3D210022F7A8 /* WalkthroughCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WalkthroughCollectionViewCell.h; sourceTree = "<group>"; };
+		55773BCA1CCE3D210022F7A8 /* WalkthroughCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WalkthroughCollectionViewCell.m; sourceTree = "<group>"; };
+		55773BCC1CCE438A0022F7A8 /* WalkthroughItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WalkthroughItem.h; sourceTree = "<group>"; };
+		55773BCD1CCE438A0022F7A8 /* WalkthroughItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WalkthroughItem.m; sourceTree = "<group>"; };
 		55B702621CCA5E0B00DF34B1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		55B702641CCA5E7000DF34B1 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		55E3300E1CCA524300F44B7D /* WalkthroughViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WalkthroughViewController.h; sourceTree = "<group>"; };
@@ -259,6 +265,10 @@
 				55644CE81CC1179F0003FEBA /* TaskTableViewCell.m */,
 				55E3300E1CCA524300F44B7D /* WalkthroughViewController.h */,
 				55E3300F1CCA524300F44B7D /* WalkthroughViewController.m */,
+				55773BC91CCE3D210022F7A8 /* WalkthroughCollectionViewCell.h */,
+				55773BCA1CCE3D210022F7A8 /* WalkthroughCollectionViewCell.m */,
+				55773BCC1CCE438A0022F7A8 /* WalkthroughItem.h */,
+				55773BCD1CCE438A0022F7A8 /* WalkthroughItem.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -418,11 +428,13 @@
 				55FBDDCB1CA9672C00968230 /* ViewController.m in Sources */,
 				55FBDDC81CA9672C00968230 /* AppDelegate.m in Sources */,
 				55F89A451CAC08C900E22A60 /* SignUpViewController.m in Sources */,
+				55773BCB1CCE3D210022F7A8 /* WalkthroughCollectionViewCell.m in Sources */,
 				55E330101CCA524300F44B7D /* WalkthroughViewController.m in Sources */,
 				55FBDDC51CA9672C00968230 /* main.m in Sources */,
 				55644CE91CC1179F0003FEBA /* TaskTableViewCell.m in Sources */,
 				55FBDDD11CA9672C00968230 /* ToDo.xcdatamodeld in Sources */,
 				551016891CB7EDAE001ECE4C /* HomeViewController.m in Sources */,
+				55773BCE1CCE438A0022F7A8 /* WalkthroughItem.m in Sources */,
 				55F89A421CAC061300E22A60 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
