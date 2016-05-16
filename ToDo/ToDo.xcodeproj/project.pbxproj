@@ -22,6 +22,9 @@
 		55773BCE1CCE438A0022F7A8 /* WalkthroughItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 55773BCD1CCE438A0022F7A8 /* WalkthroughItem.m */; };
 		55B702631CCA5E0B00DF34B1 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55B702621CCA5E0B00DF34B1 /* CoreData.framework */; };
 		55B702651CCA5E7000DF34B1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55B702641CCA5E7000DF34B1 /* QuartzCore.framework */; };
+		55DE9C411CE9F380009366E2 /* Task+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 55DE9C3E1CE9F380009366E2 /* Task+CoreDataProperties.m */; };
+		55DE9C421CE9F380009366E2 /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = 55DE9C401CE9F380009366E2 /* Task.m */; };
+		55DE9C451CEA017C009366E2 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55DE9C441CEA017C009366E2 /* WebViewController.m */; };
 		55E330101CCA524300F44B7D /* WalkthroughViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55E3300F1CCA524300F44B7D /* WalkthroughViewController.m */; };
 		55F89A421CAC061300E22A60 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F89A411CAC061300E22A60 /* LoginViewController.m */; };
 		55F89A451CAC08C900E22A60 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F89A441CAC08C900E22A60 /* SignUpViewController.m */; };
@@ -104,6 +107,12 @@
 		55773BCD1CCE438A0022F7A8 /* WalkthroughItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WalkthroughItem.m; sourceTree = "<group>"; };
 		55B702621CCA5E0B00DF34B1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		55B702641CCA5E7000DF34B1 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		55DE9C3D1CE9F380009366E2 /* Task+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Task+CoreDataProperties.h"; sourceTree = "<group>"; };
+		55DE9C3E1CE9F380009366E2 /* Task+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Task+CoreDataProperties.m"; sourceTree = "<group>"; };
+		55DE9C3F1CE9F380009366E2 /* Task.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Task.h; sourceTree = "<group>"; };
+		55DE9C401CE9F380009366E2 /* Task.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Task.m; sourceTree = "<group>"; };
+		55DE9C431CEA017C009366E2 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		55DE9C441CEA017C009366E2 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		55E3300E1CCA524300F44B7D /* WalkthroughViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WalkthroughViewController.h; sourceTree = "<group>"; };
 		55E3300F1CCA524300F44B7D /* WalkthroughViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WalkthroughViewController.m; sourceTree = "<group>"; };
 		55F89A401CAC061300E22A60 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -235,6 +244,10 @@
 			isa = PBXGroup;
 			children = (
 				55FBDDCF1CA9672C00968230 /* ToDo.xcdatamodeld */,
+				55DE9C3D1CE9F380009366E2 /* Task+CoreDataProperties.h */,
+				55DE9C3E1CE9F380009366E2 /* Task+CoreDataProperties.m */,
+				55DE9C3F1CE9F380009366E2 /* Task.h */,
+				55DE9C401CE9F380009366E2 /* Task.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -256,11 +269,13 @@
 				55FBDDC91CA9672C00968230 /* ViewController.h */,
 				55FBDDCA1CA9672C00968230 /* ViewController.m */,
 				55F89A401CAC061300E22A60 /* LoginViewController.h */,
+				55F89A411CAC061300E22A60 /* LoginViewController.m */,
 				551016871CB7EDAE001ECE4C /* HomeViewController.h */,
 				551016881CB7EDAE001ECE4C /* HomeViewController.m */,
-				55F89A411CAC061300E22A60 /* LoginViewController.m */,
 				55F89A431CAC08C900E22A60 /* SignUpViewController.h */,
 				55F89A441CAC08C900E22A60 /* SignUpViewController.m */,
+				55DE9C431CEA017C009366E2 /* WebViewController.h */,
+				55DE9C441CEA017C009366E2 /* WebViewController.m */,
 				55644CE71CC1179F0003FEBA /* TaskTableViewCell.h */,
 				55644CE81CC1179F0003FEBA /* TaskTableViewCell.m */,
 				55E3300E1CCA524300F44B7D /* WalkthroughViewController.h */,
@@ -425,8 +440,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55DE9C421CE9F380009366E2 /* Task.m in Sources */,
+				55DE9C451CEA017C009366E2 /* WebViewController.m in Sources */,
 				55FBDDCB1CA9672C00968230 /* ViewController.m in Sources */,
 				55FBDDC81CA9672C00968230 /* AppDelegate.m in Sources */,
+				55DE9C411CE9F380009366E2 /* Task+CoreDataProperties.m in Sources */,
 				55F89A451CAC08C900E22A60 /* SignUpViewController.m in Sources */,
 				55773BCB1CCE3D210022F7A8 /* WalkthroughCollectionViewCell.m in Sources */,
 				55E330101CCA524300F44B7D /* WalkthroughViewController.m in Sources */,
