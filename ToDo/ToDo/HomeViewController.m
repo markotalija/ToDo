@@ -9,12 +9,20 @@
 #import "HomeViewController.h"
 #import "TaskTableViewCell.h"
 #import "Constants.h"
+#import "MenuView.h"
+#import "TaskTableViewCell.h"
+#import "Task.h"
 
-@interface HomeViewController () <UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface HomeViewController () <UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, MenuViewDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *userProfileImageView;
+@property (weak, nonatomic) IBOutlet MenuView *menuView;
 @end
 
 @implementation HomeViewController
+
+#pragma mark - Properties
+
+#pragma mark - Actions
 
 #pragma mark - UITableViewDataSource
 
@@ -116,9 +124,7 @@
         //Setting image from *data
         self.userProfileImageView.image = [[UIImage alloc] initWithData:data];
         
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [self performSegueWithIdentifier:@"AboutSegue" sender:self];
-        });
+        
     }
     
 }
@@ -157,6 +163,12 @@
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
     
     [picker dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark - MenuViewDelegate
+
+- (void)menuViewOptionTapped:(MenuOption)option {
+    
 }
 
 @end

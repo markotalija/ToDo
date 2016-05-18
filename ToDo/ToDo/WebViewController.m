@@ -51,6 +51,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //self.urlString = @"http://www.google.com"; - provera, test
+    if (self.urlString) {
+        [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.urlString]]];
+    }
+    
     self.closeButton.alpha = 0.0f;
 }
 

@@ -9,4 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface WebViewController : UIViewController
+@property (copy, nonatomic) NSString *urlString;
 @end

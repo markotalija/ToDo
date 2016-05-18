@@ -17,6 +17,8 @@
 		5528281B1CBE74E2005CBB28 /* NotificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5528281A1CBE74E2005CBB28 /* NotificationController.m */; };
 		5528281D1CBE74E2005CBB28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5528281C1CBE74E2005CBB28 /* Assets.xcassets */; };
 		552828211CBE74E2005CBB28 /* ToDoWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 552828001CBE74E2005CBB28 /* ToDoWatch.app */; };
+		553852CE1CEC87FE004AABB4 /* MenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 553852CD1CEC87FE004AABB4 /* MenuView.m */; };
+		553852D01CEC8852004AABB4 /* MenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 553852CF1CEC8852004AABB4 /* MenuView.xib */; };
 		55644CE91CC1179F0003FEBA /* TaskTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55644CE81CC1179F0003FEBA /* TaskTableViewCell.m */; };
 		55773BCB1CCE3D210022F7A8 /* WalkthroughCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55773BCA1CCE3D210022F7A8 /* WalkthroughCollectionViewCell.m */; };
 		55773BCE1CCE438A0022F7A8 /* WalkthroughItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 55773BCD1CCE438A0022F7A8 /* WalkthroughItem.m */; };
@@ -98,6 +100,9 @@
 		5528281A1CBE74E2005CBB28 /* NotificationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationController.m; sourceTree = "<group>"; };
 		5528281C1CBE74E2005CBB28 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5528281E1CBE74E2005CBB28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		553852CC1CEC87FE004AABB4 /* MenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuView.h; sourceTree = "<group>"; };
+		553852CD1CEC87FE004AABB4 /* MenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuView.m; sourceTree = "<group>"; };
+		553852CF1CEC8852004AABB4 /* MenuView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuView.xib; sourceTree = "<group>"; };
 		55644CE71CC1179F0003FEBA /* TaskTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskTableViewCell.h; sourceTree = "<group>"; };
 		55644CE81CC1179F0003FEBA /* TaskTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskTableViewCell.m; sourceTree = "<group>"; };
 		55644CEA1CC1183E0003FEBA /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
@@ -258,6 +263,9 @@
 				55FBDDCC1CA9672C00968230 /* Main.storyboard */,
 				55FBDDD41CA9672C00968230 /* LaunchScreen.storyboard */,
 				552827FC1CBE7212005CBB28 /* iPad.storyboard */,
+				553852CF1CEC8852004AABB4 /* MenuView.xib */,
+				553852CC1CEC87FE004AABB4 /* MenuView.h */,
+				553852CD1CEC87FE004AABB4 /* MenuView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -418,6 +426,7 @@
 			files = (
 				552827FD1CBE7212005CBB28 /* iPad.storyboard in Resources */,
 				55FBDDD61CA9672C00968230 /* LaunchScreen.storyboard in Resources */,
+				553852D01CEC8852004AABB4 /* MenuView.xib in Resources */,
 				55FBDDD31CA9672C00968230 /* Assets.xcassets in Resources */,
 				55FBDDCE1CA9672C00968230 /* Main.storyboard in Resources */,
 			);
@@ -454,6 +463,7 @@
 				551016891CB7EDAE001ECE4C /* HomeViewController.m in Sources */,
 				55773BCE1CCE438A0022F7A8 /* WalkthroughItem.m in Sources */,
 				55F89A421CAC061300E22A60 /* LoginViewController.m in Sources */,
+				553852CE1CEC87FE004AABB4 /* MenuView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -338,12 +338,18 @@
                                     <outlet property="delegate" destination="tA6-dx-jOc" id="gn4-08-msF"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" id="tYN-ac-40a" customClass="MenuView">
+                                <rect key="frame" x="205" y="437" width="170" height="230"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="zLi-M4-XgY"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="menuView" destination="tYN-ac-40a" id="HVv-gh-hEi"/>
                         <outlet property="userProfileImageView" destination="90O-IO-15y" id="pXd-ge-14n"/>
                         <segue destination="Go6-gN-fbG" kind="push" identifier="WalkthroughSegue" id="NKp-kU-vaI"/>
                         <segue destination="JfF-rT-gR4" kind="modal" identifier="AboutSegue" id="QuC-M8-cLN"/>
