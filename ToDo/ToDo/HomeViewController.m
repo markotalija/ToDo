@@ -12,6 +12,7 @@
 #import "MenuView.h"
 #import "TaskTableViewCell.h"
 #import "Task.h"
+#import "UIViewController+Utilities.h"
 
 @interface HomeViewController () <UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, MenuViewDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *userProfileImageView;
@@ -124,9 +125,7 @@
         //Setting image from *data
         self.userProfileImageView.image = [[UIImage alloc] initWithData:data];
         
-        
     }
-    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -168,7 +167,26 @@
 #pragma mark - MenuViewDelegate
 
 - (void)menuViewOptionTapped:(MenuOption)option {
-    
+    switch (option) {
+        case TASK_DETAILS_MENU_OPTION: {
+            [self performSegueWithIdentifier:@"TaskDetailsSegue" sender:nil];
+        }  break;
+            
+        case ABOUT_MENU_OPTION: {
+            [self performSegueWithIdentifier:@"AboutSegue" sender:nil];
+        } break;
+            
+        case STATISTICS_MENU_OPTION: {
+            [self performSegueWithIdentifier:@"StatisticsSegue" sender:nil];
+        } break;
+            
+        case WALKTHROUGH_MENU_OPTION: {
+            [self performSegueWithIdentifier:@"WalkthroughSegue" sender:nil];
+        } break;
+            
+        default:
+            break;
+    }
 }
 
 @end

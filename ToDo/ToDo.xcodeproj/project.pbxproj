@@ -19,6 +19,11 @@
 		552828211CBE74E2005CBB28 /* ToDoWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 552828001CBE74E2005CBB28 /* ToDoWatch.app */; };
 		553852CE1CEC87FE004AABB4 /* MenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 553852CD1CEC87FE004AABB4 /* MenuView.m */; };
 		553852D01CEC8852004AABB4 /* MenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 553852CF1CEC8852004AABB4 /* MenuView.xib */; };
+		554812D81CEF20E5007D86FA /* StatisticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 554812D71CEF20E5007D86FA /* StatisticsViewController.m */; };
+		554812DB1CEF2A8A007D86FA /* TaskDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 554812DA1CEF2A8A007D86FA /* TaskDetailsViewController.m */; };
+		554812DF1CEF37AA007D86FA /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 554812DE1CEF37AA007D86FA /* DataManager.m */; };
+		554812E31CEF3F59007D86FA /* UIViewController+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 554812E21CEF3F59007D86FA /* UIViewController+Utilities.m */; };
+		554812E51CEF4F59007D86FA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 554812E41CEF4F59007D86FA /* MapKit.framework */; };
 		55644CE91CC1179F0003FEBA /* TaskTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55644CE81CC1179F0003FEBA /* TaskTableViewCell.m */; };
 		55773BCB1CCE3D210022F7A8 /* WalkthroughCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55773BCA1CCE3D210022F7A8 /* WalkthroughCollectionViewCell.m */; };
 		55773BCE1CCE438A0022F7A8 /* WalkthroughItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 55773BCD1CCE438A0022F7A8 /* WalkthroughItem.m */; };
@@ -103,6 +108,16 @@
 		553852CC1CEC87FE004AABB4 /* MenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuView.h; sourceTree = "<group>"; };
 		553852CD1CEC87FE004AABB4 /* MenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuView.m; sourceTree = "<group>"; };
 		553852CF1CEC8852004AABB4 /* MenuView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuView.xib; sourceTree = "<group>"; };
+		554812D61CEF20E5007D86FA /* StatisticsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatisticsViewController.h; sourceTree = "<group>"; };
+		554812D71CEF20E5007D86FA /* StatisticsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatisticsViewController.m; sourceTree = "<group>"; };
+		554812D91CEF2A8A007D86FA /* TaskDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskDetailsViewController.h; sourceTree = "<group>"; };
+		554812DA1CEF2A8A007D86FA /* TaskDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskDetailsViewController.m; sourceTree = "<group>"; };
+		554812DD1CEF37AA007D86FA /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
+		554812DE1CEF37AA007D86FA /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
+		554812E01CEF3830007D86FA /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		554812E11CEF3F59007D86FA /* UIViewController+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Utilities.h"; sourceTree = "<group>"; };
+		554812E21CEF3F59007D86FA /* UIViewController+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Utilities.m"; sourceTree = "<group>"; };
+		554812E41CEF4F59007D86FA /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		55644CE71CC1179F0003FEBA /* TaskTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskTableViewCell.h; sourceTree = "<group>"; };
 		55644CE81CC1179F0003FEBA /* TaskTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskTableViewCell.m; sourceTree = "<group>"; };
 		55644CEA1CC1183E0003FEBA /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
@@ -152,6 +167,7 @@
 			files = (
 				55B702651CCA5E7000DF34B1 /* QuartzCore.framework in Frameworks */,
 				55B702631CCA5E0B00DF34B1 /* CoreData.framework in Frameworks */,
+				554812E51CEF4F59007D86FA /* MapKit.framework in Frameworks */,
 				55FBDDE31CA974D100968230 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -193,6 +209,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		554812DC1CEF3757007D86FA /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				554812DD1CEF37AA007D86FA /* DataManager.h */,
+				554812DE1CEF37AA007D86FA /* DataManager.m */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
 		55FBDDB71CA9672C00968230 = {
 			isa = PBXGroup;
 			children = (
@@ -217,6 +242,7 @@
 		55FBDDC21CA9672C00968230 /* ToDo */ = {
 			isa = PBXGroup;
 			children = (
+				554812DC1CEF3757007D86FA /* Utilities */,
 				55FBDDDE1CA96BED00968230 /* Models */,
 				55FBDDDF1CA96C2600968230 /* Views */,
 				55FBDDE01CA96C3F00968230 /* Controllers */,
@@ -232,6 +258,7 @@
 				55FBDDD21CA9672C00968230 /* Assets.xcassets */,
 				55FBDDD71CA9672C00968230 /* Info.plist */,
 				55FBDDC41CA9672C00968230 /* main.m */,
+				554812E01CEF3830007D86FA /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -273,6 +300,8 @@
 		55FBDDE01CA96C3F00968230 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				554812E11CEF3F59007D86FA /* UIViewController+Utilities.h */,
+				554812E21CEF3F59007D86FA /* UIViewController+Utilities.m */,
 				55644CEA1CC1183E0003FEBA /* Constants.h */,
 				55FBDDC91CA9672C00968230 /* ViewController.h */,
 				55FBDDCA1CA9672C00968230 /* ViewController.m */,
@@ -280,6 +309,10 @@
 				55F89A411CAC061300E22A60 /* LoginViewController.m */,
 				551016871CB7EDAE001ECE4C /* HomeViewController.h */,
 				551016881CB7EDAE001ECE4C /* HomeViewController.m */,
+				554812D61CEF20E5007D86FA /* StatisticsViewController.h */,
+				554812D71CEF20E5007D86FA /* StatisticsViewController.m */,
+				554812D91CEF2A8A007D86FA /* TaskDetailsViewController.h */,
+				554812DA1CEF2A8A007D86FA /* TaskDetailsViewController.m */,
 				55F89A431CAC08C900E22A60 /* SignUpViewController.h */,
 				55F89A441CAC08C900E22A60 /* SignUpViewController.m */,
 				55DE9C431CEA017C009366E2 /* WebViewController.h */,
@@ -299,6 +332,7 @@
 		55FBDDE11CA96C5F00968230 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				554812E41CEF4F59007D86FA /* MapKit.framework */,
 				55B702641CCA5E7000DF34B1 /* QuartzCore.framework */,
 				55B702621CCA5E0B00DF34B1 /* CoreData.framework */,
 				55FBDDE21CA974D100968230 /* CoreLocation.framework */,
@@ -379,6 +413,11 @@
 					};
 					55FBDDBF1CA9672C00968230 = {
 						CreatedOnToolsVersion = 7.2.1;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -450,11 +489,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				55DE9C421CE9F380009366E2 /* Task.m in Sources */,
+				554812DB1CEF2A8A007D86FA /* TaskDetailsViewController.m in Sources */,
 				55DE9C451CEA017C009366E2 /* WebViewController.m in Sources */,
 				55FBDDCB1CA9672C00968230 /* ViewController.m in Sources */,
 				55FBDDC81CA9672C00968230 /* AppDelegate.m in Sources */,
 				55DE9C411CE9F380009366E2 /* Task+CoreDataProperties.m in Sources */,
 				55F89A451CAC08C900E22A60 /* SignUpViewController.m in Sources */,
+				554812DF1CEF37AA007D86FA /* DataManager.m in Sources */,
+				554812E31CEF3F59007D86FA /* UIViewController+Utilities.m in Sources */,
 				55773BCB1CCE3D210022F7A8 /* WalkthroughCollectionViewCell.m in Sources */,
 				55E330101CCA524300F44B7D /* WalkthroughViewController.m in Sources */,
 				55FBDDC51CA9672C00968230 /* main.m in Sources */,
@@ -464,6 +506,7 @@
 				55773BCE1CCE438A0022F7A8 /* WalkthroughItem.m in Sources */,
 				55F89A421CAC061300E22A60 /* LoginViewController.m in Sources */,
 				553852CE1CEC87FE004AABB4 /* MenuView.m in Sources */,
+				554812D81CEF20E5007D86FA /* StatisticsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -657,6 +700,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				GCC_PREFIX_HEADER = $PROJECT_NAME/PrefixHeader.pch;
 				INFOPLIST_FILE = ToDo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "";
@@ -671,6 +715,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				GCC_PREFIX_HEADER = $PROJECT_NAME/PrefixHeader.pch;
 				INFOPLIST_FILE = ToDo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "";

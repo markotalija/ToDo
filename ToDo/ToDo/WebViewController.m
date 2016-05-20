@@ -51,7 +51,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //self.urlString = @"http://www.google.com"; - provera, test
+    self.urlString = CUBES_URL;
     if (self.urlString) {
         [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.urlString]]];
     }
