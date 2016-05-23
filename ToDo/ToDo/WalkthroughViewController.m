@@ -37,7 +37,7 @@
     [super viewDidLoad];
     
     self.itemsArray = @[
-                        [[WalkthroughItem alloc] initWithText:@"Keep your work organized and\nquickly check yout reminders\nwith simple calendar."
+                        [[WalkthroughItem alloc] initWithText:@"Keep your work organized and\nquickly check your reminders\nwith simple calendar."
                                                      andImage:[UIImage imageNamed:@"calendar"]],
                         [[WalkthroughItem alloc] initWithText:@"Manage your tasks quick and easy\nfrom your phone."
                                                      andImage:[UIImage imageNamed:@"phone"]],

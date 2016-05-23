@@ -8,20 +8,38 @@
 
 #import "HomeViewController.h"
 #import "TaskTableViewCell.h"
-#import "Constants.h"
 #import "MenuView.h"
-#import "TaskTableViewCell.h"
 #import "Task.h"
-#import "UIViewController+Utilities.h"
+#import "DataManager.h"
+#import "TaskDetailsViewController.h"
+#import "WalkthroughViewController.h"
+#import "WebViewController.h"
+#import "Helpers.h"
 
 @interface HomeViewController () <UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, MenuViewDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *userProfileImageView;
 @property (weak, nonatomic) IBOutlet MenuView *menuView;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIImageView *badgeImageView;
+@property (weak, nonatomic) IBOutlet UILabel *badgeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *welcomeLabel;
+@property (strong, nonatomic)  NSMutableArray *itemsArray;
+
+
 @end
 
 @implementation HomeViewController
 
 #pragma mark - Properties
+
+- (NSMutableArray *)itemsArray {
+    _itemsArray = [[DataManager sharedInstance] fetchEntity:NSStringFromClass([Task class])
+                                                 withFilter:nil
+                                                withSortAsc:YES
+                                                     forKey:@"date"];
+    
+    return _itemsArray;
+}
 
 #pragma mark - Actions
 
@@ -34,7 +52,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 8;
+    return self.itemsArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -103,6 +121,22 @@
     [self presentViewController:alert animated:YES completion:nil];
 }
 
+#pragma mark - Private API
+
+- (void)configureBadge {
+    self.badgeImageView.alpha = (self.itemsArray.count == 0) ? 0.0f : 1.0;
+    self.badgeLabel.alpha = (self.itemsArray.count == 0) ? 0.0f : 1.0;
+    self.badgeLabel.text = [NSString stringWithFormat:@"%ld", self.itemsArray.count];
+}
+
+- (void)configureWelcomeLabel {
+    if ([Helpers isMorning]) {
+        self.welcomeLabel.text = @"Good Morning!";
+    } else {
+        self.welcomeLabel.text = @"Good Afternoon!";
+    }
+}
+
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad {
@@ -126,6 +160,10 @@
         self.userProfileImageView.image = [[UIImage alloc] initWithData:data];
         
     }
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
 }
 
 - (void)viewDidAppear:(BOOL)animated {

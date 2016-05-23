@@ -30,6 +30,8 @@ static NSString *const USER_IMAGE              = @"USER_IMAGE";
 static NSString *const WALKTHROUGH_PRESENTED   = @"WALKTHROUGH_PRESENTED";
 static NSString *const OK_STRING               = @"OK";
 static NSString *const EMPTY_STRING            = @"";
+static NSString *const LOGGED_IN               = @"LOGGED_IN";
+
 
 //Notifications
 static NSString *const CITY_CHANGED = @"CITY_CHANGED";

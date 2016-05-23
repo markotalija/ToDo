@@ -352,8 +352,12 @@
                     <navigationItem key="navigationItem" id="zLi-M4-XgY"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="badgeImageView" destination="mIV-qT-BhZ" id="e2H-FY-kIS"/>
+                        <outlet property="badgeLabel" destination="RFC-rW-M5N" id="Rq3-bP-qbB"/>
                         <outlet property="menuView" destination="tYN-ac-40a" id="HVv-gh-hEi"/>
+                        <outlet property="tableView" destination="k4N-DK-Qu4" id="DHS-MB-dTy"/>
                         <outlet property="userProfileImageView" destination="90O-IO-15y" id="pXd-ge-14n"/>
+                        <outlet property="welcomeLabel" destination="j6s-25-q65" id="Vc2-e0-3IW"/>
                         <segue destination="Go6-gN-fbG" kind="push" identifier="WalkthroughSegue" id="NKp-kU-vaI"/>
                         <segue destination="JfF-rT-gR4" kind="modal" identifier="AboutSegue" id="QuC-M8-cLN"/>
                         <segue destination="YKa-m0-eB2" kind="push" identifier="StatisticsSegue" id="tCV-2D-gu8"/>
@@ -687,7 +691,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="35"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
                                 <connections>
                                     <outlet property="delegate" destination="Ose-3a-cZj" id="3fp-cY-OB4"/>
                                 </connections>

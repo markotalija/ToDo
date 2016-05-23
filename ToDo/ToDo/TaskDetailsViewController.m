@@ -109,10 +109,25 @@
 }
 
 - (void)configureAlert {
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Save Task" message:@"Are you sure you want to go back without saving?" preferredStyle:UIAlertControllerStyleAlert];
     
+    UIAlertAction *yesAction = [UIAlertAction actionWithTitle:@"Yes" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }];
+    
+    UIAlertAction *noAction = [UIAlertAction actionWithTitle:@"No" style:UIAlertActionStyleCancel handler:nil];
+    
+    [alertController addAction:yesAction];
+    [alertController addAction:noAction];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 - (BOOL)isEdited {
+    if (self.titleTextField.text.length > 0) {
+        return YES;
+    }
+    
     return NO;
 }
 
@@ -146,15 +161,55 @@
 }
 
 - (void)registerForNotifications {
-    
+    [[NSNotificationCenter defaultCenter] addObserverForName:CITY_CHANGED
+                                                      object:nil
+                                                       queue:[NSOperationQueue mainQueue]
+                                                  usingBlock:^(NSNotification *note) {
+                                                      self.cityLabel.text = [DataManager sharedInstance].userLocality;
+                                                  }];
 }
 
 - (void)configureMap {
     
+    //Hide map
+    
+    self.mapView.alpha = 0.0f;
+    
+    CLLocationCoordinate2D coordinate;
+    
+    //If task exists, adding pin to map
+    
+    if (self.task) {
+        [self.mapView addAnnotation:self.task];
+        
+        coordinate = self.task.coordinate;
+    } else {
+        
+        //If task doesn't exist, show user location
+        
+        self.mapView.showsUserLocation = YES;
+        coordinate = [DataManager sharedInstance].userLocation.coordinate;
+    }
+    
+    [self zoomMapToCoordinate:coordinate];
+    
+    if ([DataManager sharedInstance].userLocality.length > 0) {
+        self.cityLabel.text = [DataManager sharedInstance].userLocality;
+    }
 }
 
 - (void)fillData {
+    self.titleTextField.text = self.task.heading;
+    self.descriptionTextField.text = self.task.desc;
+    self.group = [self.task.group integerValue];
+    [self.mapView addAnnotation:self.task];
+}
+
+- (void)zoomMapToCoordinate:(CLLocationCoordinate2D)coordinate {
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coordinate, kRegionRadius * 2.0, kRegionRadius * 2.0);
     
+    MKCoordinateRegion coordinateRegion = [self.mapView regionThatFits:region];
+    [self.mapView setRegion:coordinateRegion animated:YES];
 }
 
 #pragma mark - View lifecycle
@@ -163,6 +218,44 @@
     [super viewDidLoad];
     
     [self configureTextFieldPlaceholders];
+    [self registerForNotifications];
+    [self configureMap];
+    
+    self.addButton.alpha = 0.0f;
+    
+    if (self.task) {
+        [self fillData];
+    } else {
+        self.group = NOT_COMPLETED_TASK_GROUP;
+    }
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    [ UIView animateWithDuration:0.5 animations:^{
+        self.addButton.alpha = 1.0;
+    }];
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
+}
+
+#pragma mark - UITextFieldDelegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    
+    return YES;
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    
 }
 
 @end

@@ -43,6 +43,7 @@
 		55FBDDD31CA9672C00968230 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55FBDDD21CA9672C00968230 /* Assets.xcassets */; };
 		55FBDDD61CA9672C00968230 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55FBDDD41CA9672C00968230 /* LaunchScreen.storyboard */; };
 		55FBDDE31CA974D100968230 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55FBDDE21CA974D100968230 /* CoreLocation.framework */; };
+		55FC421C1CF33D23006A4D90 /* Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 55FC421B1CF33D23006A4D90 /* Helpers.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -151,6 +152,8 @@
 		55FBDDD51CA9672C00968230 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		55FBDDD71CA9672C00968230 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55FBDDE21CA974D100968230 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		55FC421A1CF33D23006A4D90 /* Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Helpers.h; sourceTree = "<group>"; };
+		55FC421B1CF33D23006A4D90 /* Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Helpers.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +217,8 @@
 			children = (
 				554812DD1CEF37AA007D86FA /* DataManager.h */,
 				554812DE1CEF37AA007D86FA /* DataManager.m */,
+				55FC421A1CF33D23006A4D90 /* Helpers.h */,
+				55FC421B1CF33D23006A4D90 /* Helpers.m */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -495,6 +500,7 @@
 				55FBDDC81CA9672C00968230 /* AppDelegate.m in Sources */,
 				55DE9C411CE9F380009366E2 /* Task+CoreDataProperties.m in Sources */,
 				55F89A451CAC08C900E22A60 /* SignUpViewController.m in Sources */,
+				55FC421C1CF33D23006A4D90 /* Helpers.m in Sources */,
 				554812DF1CEF37AA007D86FA /* DataManager.m in Sources */,
 				554812E31CEF3F59007D86FA /* UIViewController+Utilities.m in Sources */,
 				55773BCB1CCE3D210022F7A8 /* WalkthroughCollectionViewCell.m in Sources */,

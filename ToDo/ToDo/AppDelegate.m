@@ -7,15 +7,20 @@
 //
 
 #import "AppDelegate.h"
+#import <CoreLocation/CoreLocation.h>
+#import "DataManager.h"
 
+@interface AppDelegate() <CLLocationManagerDelegate>
+@property (strong, nonatomic) CLLocationManager *locationManager;
+@end
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [self configureLocationManager];
+    
     return YES;
 }
-
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     [self saveContext];
@@ -62,7 +67,6 @@
     return _persistentStoreCoordinator;
 }
 
-
 - (NSManagedObjectContext *)managedObjectContext {
     if (_managedObjectContext != nil) {
         return _managedObjectContext;
@@ -88,6 +92,27 @@
             abort();
         }
     }
+}
+
+#pragma mark - Private API
+
+- (void)configureLocationManager {
+    self.locationManager = [[CLLocationManager alloc] init];
+    self.locationManager.delegate = self;
+    [self.locationManager requestAlwaysAuthorization]; //Add NSLocationAlwaysUsageDescription in Info.p list!!!
+    [self.locationManager startMonitoringSignificantLocationChanges];
+}
+
+#pragma mark - CLLocationManagerDelegate
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
+    if (locations.count > 0) {
+        [DataManager sharedInstance].userLocation = [locations firstObject];
+    }
+}
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
+    NSLog(@"Location manager error: %@", [error localizedDescription]);
 }
 
 @end
