@@ -24,8 +24,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *badgeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *welcomeLabel;
 @property (strong, nonatomic)  NSMutableArray *itemsArray;
-
-
+@property (strong, nonatomic) Task *selectedTask;
 @end
 
 @implementation HomeViewController
@@ -41,8 +40,6 @@
     return _itemsArray;
 }
 
-#pragma mark - Actions
-
 #pragma mark - UITableViewDataSource
 
 // Ove tri metode uvek definisem kada imam tabelu. Prva je broj sekcija, druga broj redova u sekciji, treca je izgled celije. UVEK!!!
@@ -56,31 +53,39 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    TaskTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    cell.taskTitleLabel.text = [NSString stringWithFormat:@"Red %ld", indexPath.row + 1];
+    TaskTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
     
-    switch (indexPath.row) {
-        case COMPLETED_TASK_GROUP:
-            cell.taskGroupView.backgroundColor = kTurquoiseColor;
-            break;
-            
-        case NOT_COMPLETED_TASK_GROUP:
-            cell.taskGroupView.backgroundColor = kOrangeColor;
-            break;
-            
-        case IN_PROGRESS_TASK_GROUP:
-            cell.taskGroupView.backgroundColor = kPurpleColor;
-            break;
-            
-        default:
-            cell.taskGroupView.backgroundColor = kTurquoiseColor;
-            break;
-    }
+    //Task *task = [self.itemsArray objectAtIndex:indexPath.row];
+    //cell.task = task;
+    
+    cell.task = self.itemsArray[indexPath.row];
     
     return cell;
 }
 
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        Task *task = [self.itemsArray objectAtIndex:indexPath.row];
+        [[DataManager sharedInstance] deleteObjectInDatabase:task];
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        
+        [self refreshData];
+    }
+}
+
 #pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    Task *task = [self.itemsArray objectAtIndex:indexPath.row];
+    self.selectedTask = task;
+    [self performSegueWithIdentifier:@"TaskDetailsSegue" sender:nil];
+}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 70;
@@ -137,10 +142,17 @@
     }
 }
 
+- (void)refreshData {
+    [self.tableView reloadData];
+    [self configureBadge];
+}
+
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    [self configureWelcomeLabel];
     
     self.userProfileImageView.userInteractionEnabled = YES;
     
@@ -160,10 +172,14 @@
         self.userProfileImageView.image = [[UIImage alloc] initWithData:data];
         
     }
+    
+    self.tableView.tableFooterView = [[UIView alloc] init];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    
+    [self refreshData];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -174,6 +190,10 @@
         
     }
     
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
 }
 
 #pragma mark - UIImagePickerControllerDelegate
@@ -207,6 +227,7 @@
 - (void)menuViewOptionTapped:(MenuOption)option {
     switch (option) {
         case TASK_DETAILS_MENU_OPTION: {
+            self.selectedTask = nil;
             [self performSegueWithIdentifier:@"TaskDetailsSegue" sender:nil];
         }  break;
             
@@ -224,6 +245,20 @@
             
         default:
             break;
+    }
+}
+
+#pragma mark - Segue Management
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"AboutSegue"]) {
+        WebViewController *webViewController = (WebViewController *)segue.destinationViewController;
+        webViewController.urlString = CUBES_URL;
+    }
+    
+    if ([segue.identifier isEqualToString:@"TaskDetailsSegue"]) {
+        TaskDetailsViewController *taskDetailsViewController = (TaskDetailsViewController *)segue.destinationViewController;
+        taskDetailsViewController.task = self.selectedTask;
     }
 }
 
