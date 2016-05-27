@@ -36,6 +36,8 @@ static NSString *const LOGGED_IN               = @"LOGGED_IN";
 //Notifications
 static NSString *const CITY_CHANGED = @"CITY_CHANGED";
 static NSString *const CUBES_URL    = @"http://www.cubes.rs";
+static NSString *const SHOW_HOME    = @"SHOW_HOME";
+static NSString *const SHOW_LOGIN   = @"SHOW_LOGIN";
 
 
 #endif /* Constants_h */

@@ -9,6 +9,9 @@
 #import "AppDelegate.h"
 #import <CoreLocation/CoreLocation.h>
 #import "DataManager.h"
+#import "Helpers.h"
+#import "HomeViewController.h"
+#import "LoginViewController.h"
 
 @interface AppDelegate() <CLLocationManagerDelegate>
 @property (strong, nonatomic) CLLocationManager *locationManager;
@@ -16,8 +19,15 @@
 
 @implementation AppDelegate
 
+#pragma mark - UIApplicationDelegate
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [self configureLocationManager];
+    [self registerForNotifications];
+    
+    if ([Helpers isLoggedIn]) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:SHOW_HOME object:nil];
+    }
     
     return YES;
 }
@@ -79,6 +89,36 @@
     _managedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
     [_managedObjectContext setPersistentStoreCoordinator:coordinator];
     return _managedObjectContext;
+}
+
+#pragma mark - Private API
+
+- (void)registerForNotifications {
+    [[NSNotificationCenter defaultCenter] addObserverForName:SHOW_HOME
+                                                      object:nil
+                                                       queue:[NSOperationQueue mainQueue]
+                                                  usingBlock:^(NSNotification *note) {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                                                      
+        HomeViewController *homeViewController = [storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([HomeViewController class])];
+        UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:homeViewController];
+        navigationController.navigationBarHidden = YES;
+                                                      
+        self.window.rootViewController = navigationController;
+    }];
+    
+    [[NSNotificationCenter defaultCenter] addObserverForName:SHOW_LOGIN
+                                                      object:nil
+                                                       queue:[NSOperationQueue mainQueue]
+                                                  usingBlock:^(NSNotification *note) {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                                                      
+        LoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([LoginViewController class])];
+        UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:loginViewController];
+        navigationController.navigationBarHidden = YES;
+                                                      
+        self.window.rootViewController = navigationController;
+    }];
 }
 
 #pragma mark - Core Data Saving support
